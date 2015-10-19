@@ -24,5 +24,24 @@
     - When the user clicks the button, increment your variable and display
     the current count in the <span id="clicked-count"> element.
     http://api.jquery.com/text/
+
 */
 
+//when the document is ready for manipulation...
+$(function() {
+    'use strict';
+
+    //this variable will be visible inside this function and
+    //all functions declared within this function
+    var clickedCount = 0;
+
+    //register a click event handler for the #click-me button
+    $('#click-me').click(function() {
+        //increment the variable in the outer scope
+        clickedCount++;
+
+        //display the current count in the #clicked-count span
+        //use text() here to avoid any possible HTML interpretation
+        $('#clicked-count').text(clickedCount);
+    }); //on #click-me click
+}); //on doc ready
