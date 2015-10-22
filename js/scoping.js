@@ -25,4 +25,12 @@
     the current count in the <span id="clicked-count"> element.
     http://api.jquery.com/text/
 */
+$(function() {
+    'use strict';
+    var clicks = 0;
 
+    $('#click-me').click(function() {
+        clicks += 1;
+        $('#clicked-count').text(clicks);
+    })
+});
